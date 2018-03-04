@@ -1,3 +1,7 @@
+Сначала добавить в /etc/hosts:
+192.168.42.42	jenkins.server
+
+Затем:
 
 % vagrant up
 
@@ -7,3 +11,5 @@
 % ansible-playbook ansible/mkjob-playbook.yml -i ansible/inventories/dev -u vagrant
 
 Запускает второй плейбук, который создаёт задачу в jenkins, используя jjb.
+Тестовый репозиторий лежит на GitHub, так что есть также смысл также добавить Credentials.
+https://github.com/freehck/jenkins-test-repo
