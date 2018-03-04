@@ -1,0 +1,9 @@
+
+% vagrant up
+
+Создаёт виртуальную машину, копирует туда ключи, устанавливает jenkins.
+После создания, необходимо зайти в интерфейс http://jenkins.server/ и создать пользователя с логином/паролем user/q1
+
+% ansible-playbook ansible/mkjob-playbook.yml -i ansible/inventories/dev -u vagrant
+
+Запускает второй плейбук, который создаёт задачу в jenkins, используя jjb.
