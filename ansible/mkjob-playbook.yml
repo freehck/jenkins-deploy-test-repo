@@ -1,0 +1,10 @@
+---
+- hosts: jenkins.server
+  become_user: jenkins
+  become: true
+  tasks:
+    - name: Copy job file to vm
+      copy: src=files/jenkins-pipeline-job.yaml dest=/etc/jenkins_jobs owner=jenkins group=jenkins mode=0644
+    - name: Add job with jjb
+      shell: jenkins-jobs --conf /etc/jenkins_jobs/jenkins_jobs.ini update /etc/jenkins_jobs/jenkins-pipeline-job.yaml
+# jenkins-jobs --conf etc/jenkins_jobs.ini-sample update tests/yamlparser/fixtures/templates002.yaml

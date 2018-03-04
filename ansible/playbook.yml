@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become_user: root
+  become: true
+  vars_files:
+    - vars/all.yml
+  roles:
+    - server
+    - vagrant_local
+    - nginx
+    - java
+    - jenkins
+    - app
+    - jenkins-job-builder

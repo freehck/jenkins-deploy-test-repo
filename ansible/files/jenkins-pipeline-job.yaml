@@ -1,0 +1,9 @@
+- job:
+    name: test-job
+    project-type: pipeline
+    sandbox: true
+    pipeline-scm:
+      scm:
+        - git:
+            url: https://github.com/freehck/jenkins-test-repo
+#      script-path: Jenkinsfile
